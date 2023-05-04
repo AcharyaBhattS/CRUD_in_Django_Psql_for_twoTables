@@ -25,36 +25,37 @@ And <br>
 PgsDBtoPy=# create table if not exists invoice (bill_id SERIAL PRIMARY KEY, customer_id integer NOT NULL, customer_name VARCHAR(100), bill_date DATE NOT NULL, amount_paid float4 NOT NULL);
 
 
-### 4. PgsDBtoPy=# \dt
+### 4. Check the Tables: 
+PgsDBtoPy=# \dt
 
 
 ### 5. In Django Settings.py:
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PgsDBtoPy',
-        'USER': 'innovapgs',
-        'PASSWORD': 'tables2@py',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+DATABASES = { <br>
+    'default': { <br>
+        'ENGINE': 'django.db.backends.postgresql', <br>
+        'NAME': 'PgsDBtoPy', <br>
+        'USER': 'innovapgs', <br>
+        'PASSWORD': 'tables2@py', <br>
+        'HOST': '127.0.0.1', <br>
+        'PORT': '5432', <br>
+    } <br>
 }
 
 
 ### 6. Inspect Database to Django Model:
-py manage.py inspectdb > models_new.py
+py manage.py inspectdb > models_new.py <br>
 
-Rename models_new.py to models.py 
+Rename models_new.py to models.py <br>
 And save it to under myApp.
 
 
 ### 7. Migration: 
-i.   py manage.py makemigrations
+i.   py manage.py makemigrations <br><br>
 
-ii.  py manage.py sqlmigrate myApp 0001
+ii.  py manage.py sqlmigrate myApp 0001 <br><br>
 
-iii. py manage.py migrate
+iii. py manage.py migrate <br><br>
 
 
 ### 8. Edit the Settings, URLs and Views in Django
