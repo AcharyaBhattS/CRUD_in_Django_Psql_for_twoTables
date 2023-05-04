@@ -1,0 +1,196 @@
+<html>
+	{% load static %}
+	{% block content %}
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="color-scheme" content="light dark">
+	<!-- <title>Counter Ticket</title>
+	<link rel="shortcut icon" href="assets/images/favicon.ico" /> -->
+
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Poppins,Helvetica,sans-serif;
+        position: relative;
+        /* border: 1px solid; */
+      }
+      table th, table td {
+        text-align: center;
+        border: 1px solid;
+        font-family: Poppins,Helvetica,sans-serif;
+      }
+      body, #printDiv{
+        margin: 0mm;
+        padding: 0mm;
+      }
+      @page {
+        /*size: auto;*/
+        /* size: 3.14in 11in; /* printer size */
+        /* size: 3in 11in; */
+        margin: 2mm 2mm 2mm 2mm;
+        /* margin: 0mm 5mm 0mm 5mm; */
+      }
+      @media print {
+
+        body, #printDiv{
+          margin: 0mm;
+          padding: 0mm;
+        }
+        body, #printDiv{
+          margin: 0;
+          padding: 0;
+        }
+        .pagebreak {
+          clear: both;
+          page-break-after: always;
+        }
+      }
+
+      /* following codes added by NS on 20220614 */
+      .zoo_logo {
+        /* filter: brightness(0); */
+        margin-right:5px;
+      }
+
+      .logo_with_width {
+        width: 20%;
+        height: auto;
+      }
+
+      .logo_with_height {
+        width: auto;
+        height: 30px;
+      }
+      /* above codes added by NS on 20220614 */
+    </style>
+  </head>
+  <body onload="window.print(); window.close();">
+   <div id="printDiv">
+		  <table style="width: 90%; border: 0 none;">
+		    <tbody>
+		      <tr>
+		        <td style="border: 0 none;">
+		          <h2 style="text-align:center;margin-bottom:0px;margin-top:0;font-size:14px;text-transform:uppercase;font-weight:bold;font-family: Poppins,Helvetica,sans-serif;line-height:20px;">Invoice</h2>
+		          <div style="text-align:left;margin-bottom:5px;display:flex;align-items:center;justify-content:center;">
+		            <!-- following codes added by NS on 20220614 -->
+		            <!-- <img src="assets/images/zoo_logo.png" alt="" style="width: 20%;filter: brightness(0);margin-right:5px;"> -->
+		            <!-- <img src="assets/images/zoo_logo.png" alt="" class="zoo_logo logo_with_height"> -->
+		            <!-- above codes added by NS on 20220614 -->
+		          <table style="border-left:1px solid #000000;border-right:1px solid #000000;">
+		            <tbody>
+		              <tr>
+		                <td colspan="2" style="text-align: left;border:1px solid #000000;">
+		                  <p style="font-size: 12px;font-family: Poppins,Helvetica,sans-serif;text-transform:uppercase;font-weight: 600;margin:0;padding:2px 10px;line-height:15px;">Invoice Number: &nbsp;0103MG300323C001E/5</p>
+		                </td>
+		              </tr>
+
+		              <tr>
+		                <td colspan="2" style="text-align: left;border:1px solid #000000;">
+		                  <p style="font-size: 12px;font-family: Poppins,Helvetica,sans-serif;text-transform:uppercase;font-weight: 600;margin:0;padding:2px 10px;line-height:15px;">Invoice Date: &nbsp; {{ invoiceDate }}</p>
+		                </td>
+		              </tr>
+
+		              <tr>
+						<td style="border: 1px solid #000000;">
+							<h3 style="font-family: Poppins,Helvetica,sans-serif;font-size:18px;text-transform:uppercase;margin:0;padding:2px 10px;line-height:normal;">Customer ID:</h3>
+						</td>
+		                <td style="border: 1px solid #000000;">
+		                  <h3 style="font-family: Poppins,Helvetica,sans-serif;font-size:18px;text-transform:uppercase;margin:0;padding:2px 10px;line-height:normal;">Customer Name:</h3>
+		                </td>
+		                <td style="border: 1px solid #000000;">
+		                  <h3 style="font-family: Poppins,Helvetica,sans-serif;font-size:18px;text-transform:uppercase;margin:0;padding:2px 10px;line-height:normal;">Room Allotted:</h3>
+		                </td> 
+		              </tr>
+
+		              <tr>
+						<td style="border: 1px solid #000000;padding:0;">
+							<h3 style="font-family: Poppins,Helvetica,sans-serif;font-size:25px;text-transform:uppercase;margin:0;padding:10px 10px;line-height:18px;">{{ paidCust_id }}</h3>
+						</td>
+		                <td style="border: 1px solid #000000;padding:0;">
+		                  <h6 style="font-family: Poppins,Helvetica,sans-serif;font-size:25px;text-transform:uppercase;margin:0;padding:10px 10px;line-height:18px;">{{ paidCust_name }}</h6>
+		                </td>
+		                <td style="border: 1px solid #000000;padding:0;">
+		                  <h5 style="font-family: Poppins,Helvetica,sans-serif;font-size:25px;text-transform:uppercase;margin:0;padding:10px 10px;line-height:18px;">{{ paidCust_room_no }}</h5>
+		                </td>
+		              </tr>
+		            </tbody>
+		          </table>
+		          <table style="border-left:1px solid #000000;border-right:1px solid #000000;">
+		            <tbody>
+		              <tr>
+		                <td style="border: 1px solid #000000;font-size:12px;font-family: Poppins,Helvetica,sans-serif;margin:0;text-align:left;padding:2px 10px;font-weight:600;line-height:15px;text-transform:uppercase;width:10%;">Paid:</td>
+		                <td style="font-size:12px;font-family: Poppins,Helvetica,sans-serif;margin:0;text-align:left;padding:2px 10px;font-weight:600;width:85%;border: 1px solid #000000;line-height:15px;"> Rs. 847/- 
+						</td>
+		              </tr>
+					</tbody>
+				</table>
+				<br><br><br><br>
+				<table>
+					<tbody>
+		              <tr>
+		                <!-- <td style="width:30%;"> -->
+		                <td style="width:40%;border: 1px solid #000000;">
+		                  <div style="text-align:center;">
+							Payment Mode: <h4>{{ paymentMode }}</h4>
+		                    <!-- following code modified by NS on 20220610 -->
+		                    <!-- <img src="" alt='' style="filter: drop-shadow(2px 4px 6px black);"> -->
+		                    <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="-4 -4 53 53" width="120" height="120" id="0103MG300323C1">
+		                      <symbol id="tracker">
+		                        <path d="m 0 7 0 7 7 0 0 -7 -7 0 z m 1 1 5 0 0 5 -5 0 0 -5 z m 1 1 0 3 3 0 0 -3 -3 0 z" style="fill:#000000;stroke:none"></path>
+		                      </symbol> -->
+		                      <use x="0" y="-7" xlink:href="#tracker"></use>
+		                      <use x="0" y="31" xlink:href="#tracker"></use>
+		                      <use x="38" y="-7" xlink:href="#tracker"></use> <path d="M12,0 h3v2h1v1h-2v-2h-1v1h-3v1h1v2h-1v-1h-1v-2h-1v-2h1v1h3v-1 M35,1 h1v2h1v2h-4v2h-1v-3h1v-1h-1v1h-1v-3h1v-1h2v4h1v-3 M24,2 h2v1h-1v6h1v2h1v1h-2v-1h-1v-2h-1v1h-1v2h1v3h-1v-2h-1v-2h-1v1h-1v-3h-1v-1h-2v-4h1v-2h1v2h1v1h-1v1h1v1h1v-3h-1v-2h1v1h1v1h1v-2h-2v-2h1v1h1v-1h2v2 M23,2 v2h1v-2h-1 M21,5 v3h3v-3h-3 M17,6 v1h1v-1h-1 M21,9 v1h1v-1h-1 M29,2 h1v2h1v3h-1v1h1v1h-1v1h1v1h-1v3h1v1h-4v-2h1v-1h1v-3h-1v-1h-1v1h-1v-6h1v-1h1v2h1v-2 M29,6 v1h1v-1h-1 M27,4 v3h1v-3h-1 M13,3 h1v2h-1v2h-1v-3h1v-1 M10,6 h1v1h1v3h-1v-1h-2v1h-1v-6h1v1h1v1 M9,6 v1h1v-1h-1 M13,7 h1v1h2v2h-2v1h-2v-1h1v-3 M0,8 h3v1h1v1h-2v-1h-2v-1 M5,8 h2v1h-1v1h1v1h-2v-3 M37,8 h4v1h-1v2h-1v-2h-1v1h-1v-2 M43,8 h2v4h-1v1h-2v1h-1v-1h-1v-1h1v-3h2v-1 M42,10 v2h2v-2h-2 M32,10 h1v1h3v3h-1v-2h-2v1h1v2h-1v-1h-1v-4 M11,11 h1v5h-1v-5 M14,11 h1v2h1v1h-1v1h-2v-1h1v-3 M39,13 h1v2h-2v1h-1v-1h-1v-1h1v-3h2v2 M38,13 v1h1v-1h-1 M44,14 h1v3h-1v-1h-1v-1h1v-1 M21,15 h1v1h1v3h-1v-2h-1v-2 M41,15 h1v1h1v1h-3v-1h1v-1 M6,16 h3v1h1v1h-2v-1h-2v-1 M28,16 h1v1h1v1h-1v1h2v2h-1v-1h-1v1h-1v1h1v1h-1v1h-1v-1h-2v2h1v1h-6v1h-1v-1h-1v-2h1v1h1v-1h-1v-1h1v-2h-2v-1h-1v1h-1v1h1v1h-1v1h1v1h-1v2h-1v-1h-1v-2h1v-2h-1v-2h-2v-1h3v1h1v-1h-1v-2h1v1h1v1h1v-1h1v-1h1v1h1v1h1v1h1v-1h1v1h1v1h1v1h1v-3h-1v1h-1v-1h-1v-1h1v-1h-1v-3h1v1h2v1h-1v2h1v-1h1v-1 M20,19 v1h1v-1h-1 M21,21 v3h3v-3h-3 M39,17 h1v2h-4v1h-2v-1h-1v-1h-1v-2h2v2h1v-1h1v1h1v-1h1v1h1v-1 M12,22 h2v2h-1v1h-1v-1h-1v2h-1v2h-1v-1h-1v-1h-1v-1h-3v-3h-2v-1h-1v1h-1v-2h1v-3h1v1h1v-3h-1v1h-1v-1h-1v-5h1v2h1v2h1v-3h2v1h-1v4h1v3h-1v1h3v-1h-1v-1h2v1h1v1h1v1h1v2h1v-1 M5,21 v3h3v-3h-3 M9,21 v1h1v-1h-1 M3,20 v1h1v-1h-1 M9,23 v2h1v-2h-1 M30,22 h1v3h-1v1h-2v-2h2v-2 M43,23 h1v1h1v3h-1v-1h-1v1h-1v-2h-2v1h-1v1h-1v-1h-2v-1h-2v-1h-1v-1h-1v-1h-1v-1h1v-1h2v2h1v2h1v-4h4v-1h2v1h1v-1h1v2h1v2h-1v-1h-1v1 M37,21 v3h3v-3h-3 M41,22 v1h1v1h1v-1h-1v-1h-1 M32,24 h1v1h1v1h2v1h-2v1h-1v1h-1v-1h-1v-1h-1v-1h2v1h1v-1h-1v-2 M2,25 h2v1h1v2h-1v-1h-1v-1h-1v-1 M17,26 h1v2h-1v1h-1v1h-1v-1h-1v-1h2v-1h1v-1 M25,27 h2v2h-1v1h1v1h-1v1h-1v-1h-1v1h-1v1h-1v-1h-1v2h1v1h-2v1h-1v-2h1v-1h-1v1h-1v-2h-1v-2h1v1h1v-1h1v1h2v-3h-1v2h-1v-3h3v3h1v-2h1v-1 M36,27 h1v2h-1v1h-1v-1h-1v-1h2v-1 M11,28 h2v1h-1v1h-1v2h-1v-1h-1v-1h1v-1h1v-1 M2,29 h1v2h-1v2h-1v1h-1v-3h1v-1h1v-1 M31,29 h1v1h1v1h1v1h2v1h-2v1h1v1h-2v-2h-1v-2h-1v-2 M36,30 h1v1h1v2h-1v-1h-1v-2 M14,31 h1v1h2v1h-1v1h-4v1h2v1h-4v-1h1v-1h-1v1h-4v-1h2v-2h1v1h2v-1h3v-1 M28,32 h2v2h-1v1h-1v-3 M4,34 h1v3h-2v-1h-2v-1h3v-1 M16,34 h2v2h-2v-2 M28,36 h1v1h1v5h-1v3h-1v-3h-1v-1h1v-1h-1v1h-1v-1h-1v1h-1v2h1v1h1v1h-2v-1h-1v1h-1v-1h-1v1h-1v-2h-1v2h-1v-1h-2v1h-2v-1h-1v1h-3v-1h1v-1h1v-1h1v-1h-2v2h-1v-1h-1v-1h1v-2h-1v-1h2v2h1v-2h1v-1h1v1h1v1h-2v1h3v2h-1v1h3v-1h1v-1h-1v-1h1v-1h1v-1h-2v2h-2v-2h1v-1h1v-1h1v1h1v-1h2v-1h1v-2h1v1h1v-1h1v1h1v1h-3v1h1v1h1v1h1v-1h1v-1 M21,37 v3h3v-3h-3 M22,41 v2h1v-2h-1 M43,39 h1v4h-2v-2h1v-2 M8,42 h1v1h1v1h-1v1h-1v-3 M39,43 h1v2h-4v-1h-1v1h-1v-2h2v-1h1v-1h-3v-1h2v-1h-3v-1h-1v-2h1v1h1v1h1v-3h3v-2h1v-2h2v-2h1v1h1v1h-1v1h1v1h-1v3h2v1h-2v1h-1v1h1v2h-4v1h1v1 M40,33 v2h1v-2h-1 M39,35 v1h1v-1h-1 M37,37 v3h3v-3h-3 M38,43 v1h1v-1h-1 M26,0 v1h1v-1h-1 M30,0 v1h1v-1h-1 M36,0 v1h1v-1h-1 M18,1 v1h1v-1h-1 M22,6 v1h1v-1h-1 M34,6 v1h1v-1h-1 M32,8 v1h1v-1h-1 M33,9 v1h1v-1h-1 M10,10 v1h1v-1h-1 M36,10 v1h1v-1h-1 M24,12 v1h1v-1h-1 M9,13 v1h1v-1h-1 M25,13 v1h1v-1h-1 M6,14 v1h1v-1h-1 M8,14 v1h1v-1h-1 M16,14 v1h1v-1h-1 M17,15 v1h1v-1h-1 M10,16 v1h1v-1h-1 M14,16 v1h1v-1h-1 M16,16 v1h1v-1h-1 M18,16 v1h1v-1h-1 M30,16 v1h1v-1h-1 M36,16 v1h1v-1h-1 M10,18 v1h1v-1h-1 M44,18 v1h1v-1h-1 M11,20 v1h1v-1h-1 M29,21 v1h1v-1h-1 M6,22 v1h1v-1h-1 M18,22 v1h1v-1h-1 M22,22 v1h1v-1h-1 M38,22 v1h1v-1h-1 M26,24 v1h1v-1h-1 M6,26 v1h1v-1h-1 M40,26 v1h1v-1h-1 M43,27 v1h1v-1h-1 M28,28 v1h1v-1h-1 M44,28 v1h1v-1h-1 M8,29 v1h1v-1h-1 M29,29 v1h1v-1h-1 M33,29 v1h1v-1h-1 M37,29 v1h1v-1h-1 M6,30 v1h1v-1h-1 M28,30 v1h1v-1h-1 M38,30 v1h1v-1h-1 M4,32 v1h1v-1h-1 M6,32 v1h1v-1h-1 M3,33 v1h1v-1h-1 M31,33 v1h1v-1h-1 M36,33 v1h1v-1h-1 M30,34 v1h1v-1h-1 M29,35 v1h1v-1h-1 M0,36 v1h1v-1h-1 M6,36 v1h1v-1h-1 M8,37 v1h1v-1h-1 M11,37 v1h1v-1h-1 M22,38 v1h1v-1h-1 M38,38 v1h1v-1h-1 M42,38 v1h1v-1h-1 M8,39 v1h1v-1h-1 M31,42 v1h1v-1h-1 M40,42 v1h1v-1h-1 M26,43 v1h1v-1h-1 M44,44 v1h1v-1h-1 M16,0 h1v2h-1v-2 M14,5 h1v2h-1v-2 M36,6 h1v2h-1v-2 M35,8 h1v2h-1v-2 M27,9 h1v2h-1v-2 M7,11 h2v1h-2v-1 M5,12 h2v1h-2v-1 M34,15 h2v1h-2v-1 M12,16 h1v2h-1v-2 M1,27 h2v1h-2v-1 M39,27 h1v3h-1v-3 M0,28 h1v2h-1v-2 M6,28 h2v1h-2v-1 M18,28 h1v2h-1v-2 M44,30 h1v2h-1v-2 M44,33 h1v2h-1v-2 M44,37 h1v2h-1v-2 M25,41 h1v2h-1v-2 M30,43 h1v2h-1v-2 M32,43 h1v2h-1v-2 M41,43 h1v2h-1v-2 M16,10 h1v1h1v1h-2z M17,12 m1,0h1v2h-2v-1h1z M19,14 h2v1h-1v1h-1z M1,23 h2v1h-1v1h-1z M12,26 h2v2h-1v-1h-1z M4,29 h2v1h-1v1h-1z M14,36 h2v2h-1v-1h-1z M32,40 h1v1h1v1h-2z" style="fill:#000000;stroke:none"></path>
+		                    </svg>
+		                    <!-- above code modified by NS on 20220610 -->
+		                  </div>
+						
+		                <td style="text-align: left;padding:4px 10px;width:65%;border: 1px solid #000000;">
+		                  <div>
+		                    <h6 style="font-size: 10px;margin:0;">T&amp;C:</h6>
+		                    <p style="font-size: 8px;font-weight: 600;margin:0;letter-spacing: 1px;color: #000000;">- Display Ticket during entry</p>
+		                    <p style="font-size: 8px;font-weight: 600;margin:0;letter-spacing: 1px;color: #000000;">- Non-refundable</p>
+		                    <p style="font-size: 8px;font-weight: 600;margin:0;letter-spacing: 1px;color: #000000;">- Read Do's and Don'ts carefully</p>
+		                  </div>
+		                </td>
+		              </tr>
+		            </tbody>
+		          </table>
+		          <div style="display: flex; justify-content: space-between;align-items: center;">
+		            <div>
+		              <p style="font-family: Poppins,Helvetica,sans-serif;font-size: 10px;font-weight: 600;text-transform:uppercase;font-style: italic;margin: 0;text-align: right;letter-spacing: 1px;font-weight: 500;color: #000000;">Visit Us Again!! </p>
+		            </div>
+		          </div>
+		        </td>
+		      </tr>
+		    </tbody>
+		  </table>
+		  <div class="pagebreak"></div>
+		</div>
+		<!--begin::Javascript-->
+		<!--begin::Global Javascript Bundle(used by all pages)-->
+		<script src="assets/plugins/global/plugins.bundle.js"></script>
+		<script src="assets/js/scripts.bundle.js"></script>
+		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<!--end::Page Custom Javascript-->
+		<!--end::Javascript-->
+		<script>
+      window.onload = function() { window.print(); }
+
+    //   window.addEventListener("afterprint", reloadPage);
+
+    //   function reloadPage() {
+    //     window.location.replace("payment_id");
+    //     window.setTimeout(() => {
+    //     	// this.location.back();
+	//         window.location.replace("payment_id");
+	//         window.removeEventListener('afterprint', afterPrint);
+    //     }, 1);
+    //   }
+    </script>
+  </body>
+  {% endblock content %}
+</html>

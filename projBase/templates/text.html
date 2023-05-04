@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for=""><h5>Choose Customer Name: </h5></label>
+
+                <select name="selectcustomer" style="width:40%">
+                    {% for t in customerid %}
+                        <option value="{{ t.custname }}" {% if t.customer_name == selectcustomer %} selected="selected" {% endif %}>{{ t.custname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+    </div>    
+</body>
+</html>
