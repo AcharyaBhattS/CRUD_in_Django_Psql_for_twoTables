@@ -5,10 +5,10 @@ CRUD operation in Django+PostgreSQL Database for two Tables
 
 ### 1. Open PSQL terminal and Enter the followings....
 
-Server [localhost]: localhost
-Database [postgres]: PgsDBtoPy
-Port [5432]: 5432
-Username [postgres]: innovapgs
+Server [localhost]: localhost <br>
+Database [postgres]: PgsDBtoPy <br>
+Port [5432]: 5432 <br>
+Username [postgres]: innovapgs <br>
 Password for user innovapgs: tables2@py
 
 
@@ -18,9 +18,9 @@ PgsDBtoPy=# \dt
 
 ### 3. Create tables (name: Customer and Invoice)
 
-PgsDBtoPy=# create table if not exists customer (customer_id SERIAL PRIMARY KEY, customer_name VARCHAR(100) NOT NULL, room_no integer NOT NULL DEFAULT '1', checkin_date DATE NOT NULL, checkout_date DATE NOT NULL);
+PgsDBtoPy=# create table if not exists customer (customer_id SERIAL PRIMARY KEY, customer_name VARCHAR(100) NOT NULL, room_no integer NOT NULL DEFAULT '1', checkin_date DATE NOT NULL, checkout_date DATE NOT NULL); <br>
 
-And
+And <br>
 
 PgsDBtoPy=# create table if not exists invoice (bill_id SERIAL PRIMARY KEY, customer_id integer NOT NULL, customer_name VARCHAR(100), bill_date DATE NOT NULL, amount_paid float4 NOT NULL);
 
