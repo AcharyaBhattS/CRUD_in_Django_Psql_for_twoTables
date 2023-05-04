@@ -1,4 +1,4 @@
-# CRUD_Django_Psql_for_twoTables
+# CRUD Operation using Django for two tables of PostgreSQL Database
 CRUD operation in Django+PostgreSQL Database for two Tables
 
 ## The Steps:
@@ -11,8 +11,10 @@ Port [5432]: 5432
 Username [postgres]: innovapgs
 Password for user innovapgs: tables2@py
 
+
 ### 2. To Check the Table list....   
 PgsDBtoPy=# \dt
+
 
 ### 3. Create tables (name: Customer and Invoice)
 
@@ -44,12 +46,14 @@ py manage.py inspectdb > models_new.py
 Rename models_new.py to models.py 
 And save it to under myApp.
 
+
 ### 7. Migration: 
-py manage.py makemigrations
+i.   py manage.py makemigrations
 
-py manage.py sqlmigrate myApp 0001
+ii.  py manage.py sqlmigrate myApp 0001
 
-py manage.py migrate
+iii. py manage.py migrate
+
 
 ### 8. Edit the Settings, URLs and Views in Django
 
