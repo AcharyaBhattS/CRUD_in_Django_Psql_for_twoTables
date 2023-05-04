@@ -18,11 +18,13 @@ PgsDBtoPy=# \dt
 
 ### 3. Create tables (name: Customer and Invoice)
 
-PgsDBtoPy=# create table if not exists customer (customer_id SERIAL PRIMARY KEY, customer_name VARCHAR(100) NOT NULL, room_no integer NOT NULL DEFAULT '1', checkin_date DATE NOT NULL, checkout_date DATE NOT NULL); <br>
+PgsDBtoPy=# <br> 
+create table if not exists customer (customer_id SERIAL PRIMARY KEY, customer_name VARCHAR(100) NOT NULL, room_no integer NOT NULL DEFAULT '1', checkin_date DATE NOT NULL, checkout_date DATE NOT NULL); <br>
 
 And <br>
 
-PgsDBtoPy=# create table if not exists invoice (bill_id SERIAL PRIMARY KEY, customer_id integer NOT NULL, customer_name VARCHAR(100), bill_date DATE NOT NULL, amount_paid float4 NOT NULL);
+PgsDBtoPy=# <br> 
+create table if not exists invoice (bill_id SERIAL PRIMARY KEY, customer_id integer NOT NULL, customer_name VARCHAR(100), bill_date DATE NOT NULL, amount_paid float4 NOT NULL);
 
 
 ### 4. Check the Tables: 
