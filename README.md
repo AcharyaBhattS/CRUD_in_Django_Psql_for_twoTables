@@ -4,13 +4,13 @@
 ## The Steps:
 
 ### 1. Open PSQL terminal and Enter the followings....
-```
+`
 Server [localhost]: localhost <br>
 Database [postgres]: PgsDBtoPy <br>
 Port [5432]: 5432 <br>
 Username [postgres]: innovapgs <br>
 Password for user innovapgs: tables2@py
-```
+`
 
 
 ### 2. Create tables (name: Customer and Invoice)
@@ -33,7 +33,7 @@ PgsDBtoPy=# \dt
 
 
 ### 4. In Django Settings.py:
-```
+`
 DATABASES = { <br>
     'default': { <br>
        'ENGINE': 'django.db.backends.postgresql', <br>
@@ -44,7 +44,7 @@ DATABASES = { <br>
        'PORT': '5432', <br>
     } <br>
 }
-```
+`
 
 
 ### 5. Inspect Database to Django Model:
