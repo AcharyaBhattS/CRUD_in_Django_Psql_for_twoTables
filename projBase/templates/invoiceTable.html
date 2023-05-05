@@ -68,13 +68,12 @@
                                         {% for i in pay_details %}
                                             <tr>
                                                 <td>{{ i.bill_id }} </td>
-                                                <!-- <td>{{ i.payment_date }} </td> -->
                                                 <td>{{ i.customer_id }} </td>
                                                 <td>{{ i.customer_name }} </td>
                                                 <td>{{ i.bill_date }} </td>
                                                 <td>{{ i.amount_paid }} </td>
-                                                <td><a href="edit-pay/{{ i.payment_id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a></td>
-                                                <td><a href="delete-pay/{{ i.payment_id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a></td>
+                                                <td><a href="edit-pay/{{ i.bill_id }}"><button type="button" class="btn btn-outline-primary btn-sm">Edit</button></a></td>
+                                                <td><a href="delete-pay/{{ i.bill_id }}"><button type="button" class="btn btn-outline-primary btn-sm">Delete</button></a></td>
                                             </tr>
                                         {% endfor %}
                                     </tbody>

@@ -122,10 +122,10 @@ def editPayment(request, pk):
 
 
 def deletePayment(request, pk):
-  PaymentDetails = Invoice.objects.get(payment_id=pk)
+  PaymentDetails = Invoice.objects.get(bill_id=pk)
   PaymentDetails.delete()
   messages.error(request, "Record Deleted")
-  return redirect('/crud/payment')
+  return redirect('/payment')
 
 
 
