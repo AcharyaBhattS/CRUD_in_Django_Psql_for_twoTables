@@ -64,7 +64,7 @@ And save it to under myApp.
 
 +  `py manage.py migrate` <br>
 
-
+<br>
 
 ### 7. The screenshots
 ![CustomerTableView](assets/1_CustomerTableView.png "Customer Table") <br>
