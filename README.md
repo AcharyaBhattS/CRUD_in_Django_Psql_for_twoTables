@@ -12,11 +12,8 @@ Username [postgres]: innovapgs <br>
 Password for user innovapgs: tables2@py
 ```
 
-### 2. To Check the Table list....   
-PgsDBtoPy=# \dt
 
-
-### 3. Create tables (name: Customer and Invoice)
+### 2. Create tables (name: Customer and Invoice)
 
 PgsDBtoPy=# <br>
 ```
@@ -31,11 +28,11 @@ create table if not exists invoice (bill_id SERIAL PRIMARY KEY, customer_id inte
 ```
 
 
-### 4. Check the Tables: 
+### 3. Check the Tables: 
 PgsDBtoPy=# \dt
 
 
-### 5. In Django Settings.py:
+### 4. In Django Settings.py:
 ```
 DATABASES = { <br>
     'default': { <br>
@@ -50,23 +47,23 @@ DATABASES = { <br>
 ```
 
 
-### 6. Inspect Database to Django Model:
-```
-py manage.py inspectdb > models_new.py <br>
-```
+### 5. Inspect Database to Django Model:
+
+`py manage.py inspectdb > models_new.py` <br>
+
 
 Rename models_new.py to models.py <br>
 And save it to under myApp.
 
 
 
-### 7. Migration: 
-i.   py manage.py makemigrations <br>
+### 6. Migration: 
++  `py manage.py makemigrations` <br>
 
-ii.  py manage.py sqlmigrate myApp 0001 <br>
++  `py manage.py sqlmigrate myApp 0001` <br>
 
-iii. py manage.py migrate <br>
++  `py manage.py migrate` <br>
 
 
-### 8. Edit the Settings, URLs and Views in Django
+### 7. Edit the Settings, URLs and Views in Django
 
