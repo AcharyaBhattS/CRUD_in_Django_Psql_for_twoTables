@@ -65,5 +65,13 @@ And save it to under myApp.
 +  `py manage.py migrate` <br>
 
 
-### 7. Edit the Settings, URLs and Views in Django
+### 7. The screenshots
+![CustomerTableView](assets/1_CustomerTableView.png "Customer Table") <br>
+
+![InvoiceTableView](assets/2_InvoiceTableView.png "Invoice Table") <br>
+
+![AddPaymentInfo](assets/3_AddPaymentInfo.png "Add Payment Info") <br>
+
+![InvoiceTable_afterNewInvoice](assets/4_InvoiceTable_afterNewInvoice.png "Invoice Table after a new Payment") <br>
+
 
