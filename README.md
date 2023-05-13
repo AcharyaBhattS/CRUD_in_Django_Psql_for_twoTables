@@ -1,6 +1,10 @@
 # CRUD Operation using Django for two tables of PostgreSQL Database
 > CRUD operation in Django+PostgreSQL Database for two Tables
 
+![Django](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=Django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white)
+
+
 ## The Steps:
 
 ### 1. Open PSQL terminal and Enter the followings....
